@@ -1,0 +1,146 @@
+@import 'reset.scss';
+
+:root {
+    --main-bg-color: #83D350;
+    --text-color: #fff;
+    --content-color: #FAB036;
+    --list-color: #FDD48A;
+  }
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.container {
+    max-width: 1420px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.main {
+}
+
+.done {
+    padding-top: 120px;
+    &__title {
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 42px;
+        line-height: 54px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        background-color: var(--content-color);
+        padding: 20px 30px;
+        border-radius: 5px;
+        max-width: 80%;
+        margin: 0 auto;
+        .done__list {
+            background-color: var(--list-color);
+            border-radius: 5px;
+            .done__list-item {
+                padding: 15px 10px; 
+                display: flex;
+                align-items: center;
+                transition: all 0.5s ease-in;
+                border: 1px solid transparent;
+                border-bottom: 1px solid #fff;
+                cursor: pointer;
+                .done__list-check {
+                    margin-right: 10px;
+                }
+                .done__list-text {
+                }
+
+                &:hover {
+                    background-color: var(--content-color);
+                    border: 1px solid #fff
+                }
+
+            
+            }
+        }
+
+        &-input {
+            width: 95%;
+            padding: 15px 20px;
+            border: 1px solid transparent;
+            background-color: var(--list-color);
+            color: var(--text-color);
+        }
+    }
+
+    &.show {
+        width: calc(100% - 500px);
+    }
+    
+}
+
+.notes {
+    max-width: 500px;
+    &__btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        z-index: 100;
+        background-color: var(--content-color);
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #fff;
+
+    }
+    &__content {
+        transform: translateY(-1000%);
+        transition: all 0.7s; 
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        background-color: rgba(128, 128, 128, 0.3);
+        
+        &.show {
+            transform: translateY(0);
+            display: block;
+            position: fixed;
+            right: 0;
+            top: 0;
+            overflow: scroll;
+
+        }
+    }
+    &__title {
+        margin-bottom: 20px;
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .notes__list {
+        .notes__item {
+            padding: 10px;
+            background-color: var(--list-color);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 400px;
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover {
+                background-color: var(--content-color);
+            }
+            &-content {
+            }
+            &-text {
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
